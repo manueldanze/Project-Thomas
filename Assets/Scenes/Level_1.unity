@@ -262,6 +262,38 @@ PrefabInstance:
       propertyPath: switchCharacter.m_Name
       value: Switch Character
       objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Id
+      value: a7a45159-a4d8-454e-8530-6d0b6488fec4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/q
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Flags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Interactions
+      value: Press
+      objectReference: {fileID: 0}
     - target: {fileID: 8307130404010527817, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: m_Mass
       value: 1.5
@@ -1130,20 +1162,32 @@ PrefabInstance:
       value: Switch Character
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_Interactions
+      value: Press
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Id
-      value: 50aedcf0-9967-4822-a523-8a245682ebca
+      value: d5e88aee-0920-4c02-9903-472e92eb2951
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[1].m_Id
-      value: 361f08af-1084-4865-b5c0-302a6dd1a3d5
+      value: def461a2-5c58-4dff-abde-16a6227d0a7c
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[2].m_Id
-      value: d5e88aee-0920-4c02-9903-472e92eb2951
+      value: 0b9a8cb7-cdd2-475a-ba29-1c9a51910272
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[3].m_Id
@@ -1158,8 +1202,16 @@ PrefabInstance:
       value: d5e88aee-0920-4c02-9903-472e92eb2951
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Name
+      value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/e
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[1].m_Name
-      value: left
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[1].m_Path
@@ -1167,11 +1219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[2].m_Name
-      value: right
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/e
+      value: <Keyboard>/q
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[3].m_Name
@@ -1190,8 +1242,12 @@ PrefabInstance:
       value: right
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Flags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[1].m_Flags
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[3].m_Flags
@@ -1207,6 +1263,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Action
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[2].m_Action
       value: Switch Character
       objectReference: {fileID: 0}
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
@@ -1220,6 +1280,10 @@ PrefabInstance:
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[5].m_Action
       value: Switch Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[2].m_Interactions
+      value: Press
       objectReference: {fileID: 0}
     - target: {fileID: 8515711095479631397, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: m_Name
@@ -1324,6 +1388,38 @@ PrefabInstance:
     - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Id
+      value: e7c174c0-fb83-4aa5-a52f-837875a97f93
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/q
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Flags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061634247341395187, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: switchCharacter.m_SingletonActionBindings.Array.data[0].m_Interactions
+      value: Press
       objectReference: {fileID: 0}
     - target: {fileID: 8307130404010527817, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: m_Mass

@@ -271,28 +271,20 @@ MonoBehaviour:
     m_Flags: 0
   switchCharacter:
     m_Name: Switch Character
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: 5e4a558e-68bd-497b-8a56-1426b0f31ce6
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: d8e27274-e26f-4b9b-93b9-92e3b30db2a1
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Switch Character
-      m_Flags: 4
-    - m_Name: left
-      m_Id: 6e51004f-da07-4512-9e04-1c78a0cc7937
+    - m_Name: 
+      m_Id: 5f4b5be3-46c0-4b61-8575-af0e320fbeb9
       m_Path: <Keyboard>/q
-      m_Interactions: 
+      m_Interactions: Press
       m_Processors: 
       m_Groups: 
       m_Action: Switch Character
-      m_Flags: 8
+      m_Flags: 0
     m_Flags: 0
   camFollowSpeed: 2.5
   camDistance: -40

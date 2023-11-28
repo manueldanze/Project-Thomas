@@ -27,9 +27,11 @@ public class PlayerController : MonoBehaviour
 
     private bool isJumping;
 
-    private bool thomasIsActive = false;
-    private bool chrisIsActive = false;
-    private bool clairIsActive = false;
+    private bool thomasIsActive;
+    private bool chrisIsActive;
+    private bool clairIsActive;
+
+
 
     private void Awake()
     {
@@ -51,16 +53,21 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // check how this works
+
     }
 
-    void Update()
-    {     
+
+    private void Update()
+    {
+
         if (switchCharacter.triggered)
         {
             SwitchCharacter();
-            print(switchCharacter.ReadValue<Vector2>().ToString());
         }
+            
+        
+
+
 
 
         Rigidbody2D rb = GetActiveCharacterRB();
@@ -86,76 +93,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     private void SwitchCharacter()
     {
         if (thomasIsActive)
         {
-            if (switchCharacter.ReadValue<Vector2>().x == 1)
-            {
-                rbThomas.GetComponent<PlayerController>().enabled = false;
-                thomasIsActive = false;
-                rbChris.GetComponent<PlayerController>().enabled = true;
-                chrisIsActive = true;
-                rbClair.GetComponent<PlayerController>().enabled = false;
-                clairIsActive = false;
-            }
-            if (switchCharacter.ReadValue<Vector2>().x == -1)
-            {
-                rbThomas.GetComponent<PlayerController>().enabled = false;
-                thomasIsActive = false;
-                rbChris.GetComponent<PlayerController>().enabled = false;
-                chrisIsActive = false;
-                rbClair.GetComponent<PlayerController>().enabled = true;
-                clairIsActive = true;
-            }
-
+            chrisIsActive = true;
+            thomasIsActive = false;
+            clairIsActive = false;
+            rbChris.GetComponent<PlayerController>().enabled = true;
+            rbThomas.GetComponent<PlayerController>().enabled = false;
+            rbClair.GetComponent<PlayerController>().enabled = false;       
         }
-        if (chrisIsActive)
+        else if (chrisIsActive)
         {
-            if (switchCharacter.ReadValue<Vector2>().x == 1)
-            {
-                rbChris.GetComponent<PlayerController>().enabled = false;
-                chrisIsActive = false;
-                rbThomas.GetComponent<PlayerController>().enabled = false;
-                thomasIsActive = false;
-                rbClair.GetComponent<PlayerController>().enabled = true;
-                clairIsActive = true;
-            }
-            if (switchCharacter.ReadValue<Vector2>().x == -1)
-            {
-                rbChris.GetComponent<PlayerController>().enabled = false;
-                chrisIsActive = false;
-                rbThomas.GetComponent<PlayerController>().enabled = true;
-                thomasIsActive = true;
-                rbClair.GetComponent<PlayerController>().enabled = false;
-                clairIsActive = false;
-            }
-            
-
+            clairIsActive = true;
+            chrisIsActive = false;
+            thomasIsActive = false;
+            rbClair.GetComponent<PlayerController>().enabled = true;
+            rbChris.GetComponent<PlayerController>().enabled = false;
+            rbThomas.GetComponent<PlayerController>().enabled = false;          
         }
-        if (clairIsActive)
+        else
         {
-            if (switchCharacter.ReadValue<Vector2>().x == 1)
-            {
-                rbClair.GetComponent<PlayerController>().enabled = false;
-                clairIsActive = false;
-                rbThomas.GetComponent<PlayerController>().enabled = true;
-                thomasIsActive = true;
-                rbChris.GetComponent<PlayerController>().enabled = false;
-                chrisIsActive = false;
-
-            }
-            if (switchCharacter.ReadValue<Vector2>().x == -1)
-            {
-                rbClair.GetComponent<PlayerController>().enabled = false;
-                clairIsActive = false;
-                rbThomas.GetComponent<PlayerController>().enabled = false;
-                thomasIsActive = false;
-                rbChris.GetComponent<PlayerController>().enabled = true;
-                chrisIsActive = true;
-
-            }
-
+            thomasIsActive = true;
+            clairIsActive = false;
+            chrisIsActive = false;
+            rbThomas.GetComponent<PlayerController>().enabled = true;
+            rbClair.GetComponent<PlayerController>().enabled = false;
+            rbChris.GetComponent<PlayerController>().enabled = false;      
         }
     }
 
