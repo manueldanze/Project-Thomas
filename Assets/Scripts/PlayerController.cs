@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump(Rigidbody2D rb)
     {
-        if (isGrounded && jump.triggered)
+        if (isGrounded && jump.IsPressed())
         {
             rb.AddForce(jumpMagnitude * jumpForce * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }

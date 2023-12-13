@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject chris;
     [SerializeField] private GameObject clair;
 
-    private bool thomasIsActive;
-    private bool chrisIsActive;
-    private bool clairIsActive;
+    private bool thomasIsActiveChar;
+    private bool chrisIsActiveChar;
+    private bool clairIsActiveChar;
 
-    public GameObject activeCharacter;
+    private bool isThomasInGoal = false;
+    private bool isChrisInGoal = false;
+    private bool isClairInGoal = false;
+
+    private GameObject activeCharacter;
 
 
     private void OnEnable()
@@ -31,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {        
-        thomasIsActive = true;
+        thomasIsActiveChar = true;
         chris.gameObject.GetComponent<PlayerController>().enabled = false;
         clair.gameObject.GetComponent<PlayerController>().enabled = false;
         activeCharacter = thomas;
@@ -44,15 +49,20 @@ public class GameManager : MonoBehaviour
             SwitchCharacter();
             SetActiveCharacter();
         }
+
+        if (isThomasInGoal && isChrisInGoal && isClairInGoal)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     private void SetActiveCharacter()
     {
-        if (thomasIsActive)
+        if (thomasIsActiveChar)
         {
             activeCharacter = thomas;
         }
-        else if (chrisIsActive) 
+        else if (chrisIsActiveChar) 
         {
             activeCharacter = chris;
         }
@@ -64,29 +74,29 @@ public class GameManager : MonoBehaviour
 
     private void SwitchCharacter()
     {
-        if (thomasIsActive)
+        if (thomasIsActiveChar)
         {
-            chrisIsActive = true;
-            thomasIsActive = false;
-            clairIsActive = false;
+            chrisIsActiveChar = true;
+            thomasIsActiveChar = false;
+            clairIsActiveChar = false;
             chris.GetComponent<PlayerController>().enabled = true;
             thomas.GetComponent<PlayerController>().enabled = false;
             clair.GetComponent<PlayerController>().enabled = false;
         }
-        else if (chrisIsActive)
+        else if (chrisIsActiveChar)
         {
-            clairIsActive = true;
-            chrisIsActive = false;
-            thomasIsActive = false;
+            clairIsActiveChar = true;
+            chrisIsActiveChar = false;
+            thomasIsActiveChar = false;
             clair.GetComponent<PlayerController>().enabled = true;
             chris.GetComponent<PlayerController>().enabled = false;
             thomas.GetComponent<PlayerController>().enabled = false;
         }
         else
         {
-            thomasIsActive = true;
-            clairIsActive = false;
-            chrisIsActive = false;
+            thomasIsActiveChar = true;
+            clairIsActiveChar = false;
+            chrisIsActiveChar = false;
             thomas.GetComponent<PlayerController>().enabled = true;
             clair.GetComponent<PlayerController>().enabled = false;
             chris.GetComponent<PlayerController>().enabled = false;
@@ -95,5 +105,18 @@ public class GameManager : MonoBehaviour
     public GameObject GetActiveCharacter()
     {
         return activeCharacter;
+    }
+
+    public void SetIsThomasInGoal(bool value)
+    {
+        isThomasInGoal = value;
+    }
+    public void SetIsChrisInGoal(bool value)
+    {
+        isChrisInGoal = value;
+    }
+    public void SetIsClairInGoal(bool value)
+    {
+        isClairInGoal = value;
     }
 }
