@@ -5,31 +5,25 @@ using UnityEngine;
 
 public class Camera_Controller : MonoBehaviour
 {
-    private Camera mainCamera;
-    private GameManager gameManager;
+    [SerializeField] private GameManager_SO gameManager_SO;
 
-    [Range(0f, 5f)][SerializeField] private float camFollowSpeed;
-    [Range(-10f, -100f)][SerializeField] private float camDistance;
+    [Range(0f, 5f)]
+    [SerializeField] private float camFollowSpeed;
 
-    private void Awake()
-    {
-        mainCamera = Camera.main;
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-    }
+    [Range(-10f, -100f)]
+    [SerializeField] private float camDistance;
+
 
     private void FixedUpdate()
     {
-        FollowPlayerWithCamera(gameManager.GetActiveCharacter().GetComponent<Rigidbody2D>());
+        FollowPlayerWithCamera(gameManager_SO.activeCharPosition);
     }
 
-    void FollowPlayerWithCamera(Rigidbody2D rb)
+
+    private void FollowPlayerWithCamera(Vector3 playerPosition)
     {
-        Vector3 playerPosition = rb.transform.position;
+        Vector3 newPosition = Vector3.Lerp(Camera.main.transform.position, playerPosition, camFollowSpeed * Time.fixedDeltaTime);
 
-        Vector3 camPosition = mainCamera.transform.position;
-
-        Vector3 newPosition = Vector3.Lerp(camPosition, playerPosition, camFollowSpeed * Time.deltaTime);
-
-        mainCamera.transform.position = new Vector3(newPosition.x, newPosition.y, camDistance);
+        Camera.main.transform.position = new Vector3(newPosition.x, newPosition.y, camDistance);
     }
 }

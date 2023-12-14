@@ -8,19 +8,36 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private InputAction switchCharacter;
 
+    private GameObject activeCharacter;
+
     [SerializeField] private GameObject thomas;
     [SerializeField] private GameObject chris;
     [SerializeField] private GameObject clair;
 
-    private bool thomasIsActiveChar;
-    private bool chrisIsActiveChar;
-    private bool clairIsActiveChar;
+    [SerializeField] private GameManager_SO gameManager_SO;
 
-    private bool isThomasInGoal = false;
-    private bool isChrisInGoal = false;
-    private bool isClairInGoal = false;
+    private bool thomasIsActiveChar = true;
+    private bool chrisIsActiveChar = false;
+    private bool clairIsActiveChar = false;
 
-    private GameObject activeCharacter;
+
+    private void Awake()
+    {        
+        chris.gameObject.GetComponent<PlayerController>().enabled = false;
+        clair.gameObject.GetComponent<PlayerController>().enabled = false;
+
+        activeCharacter = thomas;
+
+        UpdateGameManager_SO();
+    }
+
+    private void Update()
+    {
+        UpdateActiveCharacter();
+        UpdateGameManager_SO();
+        CheckWinCondition();
+    }
+
 
 
     private void OnEnable()
@@ -33,42 +50,12 @@ public class GameManager : MonoBehaviour
         switchCharacter.Disable();
     }
 
-
-    private void Awake()
-    {        
-        thomasIsActiveChar = true;
-        chris.gameObject.GetComponent<PlayerController>().enabled = false;
-        clair.gameObject.GetComponent<PlayerController>().enabled = false;
-        activeCharacter = thomas;
-    }
-
-    private void Update()
+    private void UpdateActiveCharacter()
     {
         if (switchCharacter.triggered)
         {
             SwitchCharacter();
             SetActiveCharacter();
-        }
-
-        if (isThomasInGoal && isChrisInGoal && isClairInGoal)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
-
-    private void SetActiveCharacter()
-    {
-        if (thomasIsActiveChar)
-        {
-            activeCharacter = thomas;
-        }
-        else if (chrisIsActiveChar) 
-        {
-            activeCharacter = chris;
-        }
-        else
-        {
-            activeCharacter = clair;
         }
     }
 
@@ -92,7 +79,7 @@ public class GameManager : MonoBehaviour
             chris.GetComponent<PlayerController>().enabled = false;
             thomas.GetComponent<PlayerController>().enabled = false;
         }
-        else
+        else if(clairIsActiveChar)
         {
             thomasIsActiveChar = true;
             clairIsActiveChar = false;
@@ -102,21 +89,33 @@ public class GameManager : MonoBehaviour
             chris.GetComponent<PlayerController>().enabled = false;
         }
     }
-    public GameObject GetActiveCharacter()
+
+    private void SetActiveCharacter()
     {
-        return activeCharacter;
+        if (thomasIsActiveChar)
+        {
+            activeCharacter = thomas;
+        }
+        else if (chrisIsActiveChar)
+        {
+            activeCharacter = chris;
+        }
+        else
+        {
+            activeCharacter = clair;
+        }
     }
 
-    public void SetIsThomasInGoal(bool value)
+    private void UpdateGameManager_SO()
     {
-        isThomasInGoal = value;
+        gameManager_SO.activeCharPosition = activeCharacter.transform.position;
     }
-    public void SetIsChrisInGoal(bool value)
+
+    private void CheckWinCondition()
     {
-        isChrisInGoal = value;
-    }
-    public void SetIsClairInGoal(bool value)
-    {
-        isClairInGoal = value;
+        if (gameManager_SO.isThomasInGoal && gameManager_SO.isChrisInGoal && gameManager_SO.isClairInGoal)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

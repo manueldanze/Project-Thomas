@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class GoalThomas : MonoBehaviour
 {
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
-    }
+    [SerializeField] private GameManager_SO gameManagerSO;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag.Equals("Thomas"))
         {
-            Debug.Log("thomas enter");
-            gameManager.SetIsThomasInGoal(true);
+            gameManagerSO.isThomasInGoal = true;
         }
     }
 
@@ -24,8 +18,7 @@ public class GoalThomas : MonoBehaviour
     {
         if (collision.tag.Equals("Thomas"))
         {
-            Debug.Log("thomas exit");
-            gameManager.SetIsThomasInGoal(false);
+            gameManagerSO.isThomasInGoal = false;
         }
     }
 }

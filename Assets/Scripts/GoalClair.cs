@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class GoalClair : MonoBehaviour
 {
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
-    }
+    [SerializeField] private GameManager_SO gameManagerSO;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.Equals("Clair"))
         {
-            Debug.Log("clair enter");
-            gameManager.SetIsClairInGoal(true);
+            gameManagerSO.isClairInGoal = true;
         }
     }
 
@@ -24,8 +18,7 @@ public class GoalClair : MonoBehaviour
     {
         if (collision.tag.Equals("Clair"))
         {
-            Debug.Log("clair exit");
-            gameManager.SetIsClairInGoal(false);
+            gameManagerSO.isClairInGoal = false;
         }
     }
 }

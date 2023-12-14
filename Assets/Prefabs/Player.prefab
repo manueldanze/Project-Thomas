@@ -262,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79480035d0fa9a847be44bab1aedeba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8307130404010527817}
   jump:
     m_Name: Jump
     m_Type: 1
@@ -363,5 +362,6 @@ MonoBehaviour:
     m_Flags: 0
   maxVelocityX: 15
   maxVelocityY: 15
-  moveSpeed: 5
-  jumpMagnitude: 15
+  moveSpeed: 800
+  jumpMagnitude: 800
+  playerSO: {fileID: 11400000, guid: 6e6e4fb04c06d3248937ad5e3beb8226, type: 2}

@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     [SerializeField] private InputAction jump;
     [SerializeField] private InputAction move;
@@ -17,19 +17,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpMagnitude;
 
-    private bool isGrounded;
-
+    // Read in Update(), execute in FixedUpdate()
     private Vector2 moveForce;
     private Vector2 jumpForce;
-
-    private float rbVelocityMagnitude;
     private Vector2 rbVelocity;
+    private float rbVelocityMagnitude;
+
+    // Get information from child GroundChecker
+    private bool isGrounded;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
         moveForce = move.ReadValue<Vector2>();
         jumpForce = jump.ReadValue<Vector2>();
-
         rbVelocity = rb.velocity;
         rbVelocityMagnitude = rb.velocity.magnitude;
     }
@@ -40,6 +45,7 @@ public class PlayerController : MonoBehaviour
         Move(rb);
         ClampCharacterVelocity(rb);
     }
+
 
     private void OnEnable()
     {
@@ -53,7 +59,6 @@ public class PlayerController : MonoBehaviour
         move.Disable();
     }
 
-
     private void Jump(Rigidbody2D rb)
     {
         if (isGrounded && jump.IsPressed())
@@ -61,7 +66,6 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(jumpMagnitude * jumpForce * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }
     }
-
 
     private void Move(Rigidbody2D rb)
     {
