@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 8307130404010527817}
   - component: {fileID: 8061634247341395187}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 2D Vector
-      m_Id: f1393a77-242a-4b17-b4c0-ae627c7d1906
+      m_Id: 471bd769-b88f-428b-b529-1c789e311339
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
@@ -328,7 +328,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 4
     - m_Name: up
-      m_Id: 2f76d100-5f25-4662-b9d4-bf6debdc5c37
+      m_Id: f4c4ae6f-4bda-40ae-b1a1-d08e63d4f2b0
       m_Path: 
       m_Interactions: 
       m_Processors: 
@@ -336,7 +336,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: down
-      m_Id: bad2730f-943c-4fae-b31b-7fb89a49d199
+      m_Id: f174dde2-44f7-4873-8b01-4a1fe823ddd0
       m_Path: 
       m_Interactions: 
       m_Processors: 
@@ -344,7 +344,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: left
-      m_Id: 9cae7846-5e0d-4057-b57a-9ea8c6f08611
+      m_Id: 75b4c8cc-67fd-4ede-ba4b-0b659b803962
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
@@ -352,7 +352,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: right
-      m_Id: be2acfba-6995-472e-a026-c6e55f813b05
+      m_Id: 56fa265d-2d6d-4eaf-91a8-a67f39db4f25
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
@@ -360,8 +360,4 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
-  maxVelocityX: 15
-  maxVelocityY: 15
-  moveSpeed: 800
-  jumpMagnitude: 800
-  playerSO: {fileID: 11400000, guid: 6e6e4fb04c06d3248937ad5e3beb8226, type: 2}
+  character_SO: {fileID: 11400000, guid: 466a6b9e4a7a685468701d7503ef0fb7, type: 2}

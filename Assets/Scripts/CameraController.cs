@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Camera_Controller : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameManager_SO gameManager_SO;
+
 
     [Range(0f, 5f)]
     [SerializeField] private float camFollowSpeed;
@@ -13,12 +14,10 @@ public class Camera_Controller : MonoBehaviour
     [Range(-10f, -100f)]
     [SerializeField] private float camDistance;
 
-
     private void FixedUpdate()
     {
-        FollowPlayerWithCamera(gameManager_SO.activeCharPosition);
+        FollowPlayerWithCamera(gameManager_SO.activeCharPosition);            
     }
-
 
     private void FollowPlayerWithCamera(Vector3 playerPosition)
     {

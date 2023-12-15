@@ -6,8 +6,4 @@ using UnityEngine;
 public class GameManager_SO : ScriptableObject
 {
     public Vector3 activeCharPosition;
-
-    public bool isThomasInGoal = false;
-    public bool isChrisInGoal = false;
-    public bool isClairInGoal = false;
 }

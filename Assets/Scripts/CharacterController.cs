@@ -1,49 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-
     [SerializeField] private InputAction jump;
     [SerializeField] private InputAction move;
 
-    [SerializeField] private float maxVelocityX;
-    [SerializeField] private float maxVelocityY;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpMagnitude;
+    [SerializeField] Character_SO character_SO;
 
-    // Read in Update(), execute in FixedUpdate()
+    private Rigidbody2D rb;
+
+    private float maxVelocityX;
+    private float maxVelocityY;
+    private float moveSpeed;
+    private float jumpMagnitude;
+
     private Vector2 moveForce;
     private Vector2 jumpForce;
     private Vector2 rbVelocity;
     private float rbVelocityMagnitude;
-
-    // Get information from child GroundChecker
-    private bool isGrounded;
+  
+    private bool isGrounded = false; // gets value from child "GroundChecker"
 
     private void Awake()
-    {
+    {    
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        moveForce = move.ReadValue<Vector2>();
-        jumpForce = jump.ReadValue<Vector2>();
-        rbVelocity = rb.velocity;
-        rbVelocityMagnitude = rb.velocity.magnitude;
+        Read_SOVariables();
+        Read_Input();      
     }
 
     private void FixedUpdate()
     {
-        Jump(rb);
-        Move(rb);
-        ClampCharacterVelocity(rb);
+        Execute_Jump(rb);
+        Execute_Move(rb);
+        Clamp_Velocity(rb);
     }
 
 
@@ -59,7 +58,26 @@ public class PlayerController : MonoBehaviour
         move.Disable();
     }
 
-    private void Jump(Rigidbody2D rb)
+    private void Read_SOVariables()
+    {
+        // put into Update() to update dynamic on runtime
+        rb.mass = character_SO.mass;
+        maxVelocityX = character_SO.maxVelocityX;
+        maxVelocityY = character_SO.maxVelocityY;
+        moveSpeed = character_SO.moveSpeed;
+        jumpMagnitude = character_SO.jumpMagnitude;
+        character_SO.NAMETAG = gameObject.tag;
+    }
+
+    private void Read_Input()
+    {
+        moveForce = move.ReadValue<Vector2>();
+        jumpForce = jump.ReadValue<Vector2>();
+        rbVelocity = rb.velocity;
+        rbVelocityMagnitude = rb.velocity.magnitude;
+    }
+
+    private void Execute_Jump(Rigidbody2D rb)
     {
         if (isGrounded && jump.IsPressed())
         {
@@ -67,12 +85,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Move(Rigidbody2D rb)
+    private void Execute_Move(Rigidbody2D rb)
     {
         rb.AddForce(moveSpeed * moveForce * Time.fixedDeltaTime, ForceMode2D.Force);
     }
 
-    private void ClampCharacterVelocity(Rigidbody2D rb)
+    private void Clamp_Velocity(Rigidbody2D rb)
     {
         if (rbVelocityMagnitude > maxVelocityX)
         {
@@ -86,7 +104,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetIsGrounded(bool value)
+    public void Set_IsGrounded(bool value)
     {
         isGrounded = value;
     }

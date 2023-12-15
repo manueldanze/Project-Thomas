@@ -3,7 +3,14 @@ guid: f7ea5277ba6ef9e4dac4805d39cecf4c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - thomas: {instanceID: 0}
+  - chris: {instanceID: 0}
+  - clair: {instanceID: 0}
+  - gameManager_SO: {instanceID: 0}
+  - character_SOThomas: {fileID: 11400000, guid: f5b256dd9532cd147873d06b14b5ec61, type: 2}
+  - character_SOChris: {fileID: 11400000, guid: b4783394160c0604db703127e398a4a2, type: 2}
+  - character_SOClair: {fileID: 11400000, guid: 8f024e647bfee184f8acb88f0bc935dc, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

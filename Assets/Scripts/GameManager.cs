@@ -10,32 +10,33 @@ public class GameManager : MonoBehaviour
 
     private GameObject activeCharacter;
 
+    // ----> hardcoded - not good
     [SerializeField] private GameObject thomas;
     [SerializeField] private GameObject chris;
     [SerializeField] private GameObject clair;
 
     [SerializeField] private GameManager_SO gameManager_SO;
 
-    private bool thomasIsActiveChar = true;
-    private bool chrisIsActiveChar = false;
-    private bool clairIsActiveChar = false;
-
+    // ----> hardcoded - not good
+    [SerializeField] private Character_SO character_SOThomas;
+    [SerializeField] private Character_SO character_SOChris;
+    [SerializeField] private Character_SO character_SOClair;
 
     private void Awake()
-    {        
-        chris.gameObject.GetComponent<PlayerController>().enabled = false;
-        clair.gameObject.GetComponent<PlayerController>().enabled = false;
-
+    {              
+        chris.gameObject.GetComponent<CharacterController>().enabled = false;
+        clair.gameObject.GetComponent<CharacterController>().enabled = false;
+        character_SOThomas.isActive = true;
         activeCharacter = thomas;
 
-        UpdateGameManager_SO();
+        Update_GameManager_SO();
     }
 
     private void Update()
     {
-        UpdateActiveCharacter();
-        UpdateGameManager_SO();
-        CheckWinCondition();
+        Update_ActiveCharacter();
+        Update_GameManager_SO();
+        Check_WinCondition();
     }
 
 
@@ -50,53 +51,55 @@ public class GameManager : MonoBehaviour
         switchCharacter.Disable();
     }
 
-    private void UpdateActiveCharacter()
+    private void Update_ActiveCharacter()
     {
         if (switchCharacter.triggered)
         {
-            SwitchCharacter();
-            SetActiveCharacter();
+            Switch_Character();
+            Set_ActiveCharacter();
         }
     }
 
-    private void SwitchCharacter()
+    // ----> hardcoded - not good
+    private void Switch_Character()
     {
-        if (thomasIsActiveChar)
+        if (character_SOThomas.isActive)
         {
-            chrisIsActiveChar = true;
-            thomasIsActiveChar = false;
-            clairIsActiveChar = false;
-            chris.GetComponent<PlayerController>().enabled = true;
-            thomas.GetComponent<PlayerController>().enabled = false;
-            clair.GetComponent<PlayerController>().enabled = false;
+            character_SOChris.isActive = true;
+            character_SOThomas.isActive = false;
+            character_SOClair.isActive = false;
+            chris.GetComponent<CharacterController>().enabled = true;
+            thomas.GetComponent<CharacterController>().enabled = false;
+            clair.GetComponent<CharacterController>().enabled = false;
         }
-        else if (chrisIsActiveChar)
+        else if (character_SOChris.isActive)
         {
-            clairIsActiveChar = true;
-            chrisIsActiveChar = false;
-            thomasIsActiveChar = false;
-            clair.GetComponent<PlayerController>().enabled = true;
-            chris.GetComponent<PlayerController>().enabled = false;
-            thomas.GetComponent<PlayerController>().enabled = false;
+            character_SOClair.isActive = true;
+            character_SOChris.isActive = false;
+            character_SOThomas.isActive = false;
+            clair.GetComponent<CharacterController>().enabled = true;
+            chris.GetComponent<CharacterController>().enabled = false;
+            thomas.GetComponent<CharacterController>().enabled = false;
         }
-        else if(clairIsActiveChar)
+        else if(character_SOClair.isActive)
         {
-            thomasIsActiveChar = true;
-            clairIsActiveChar = false;
-            chrisIsActiveChar = false;
-            thomas.GetComponent<PlayerController>().enabled = true;
-            clair.GetComponent<PlayerController>().enabled = false;
-            chris.GetComponent<PlayerController>().enabled = false;
+            character_SOThomas.isActive = true;
+            character_SOClair.isActive = false;
+            character_SOChris.isActive = false;
+            thomas.GetComponent<CharacterController>().enabled = true;
+            clair.GetComponent<CharacterController>().enabled = false;
+            chris.GetComponent<CharacterController>().enabled = false;
         }
     }
 
-    private void SetActiveCharacter()
+    private void Set_ActiveCharacter()
     {
-        if (thomasIsActiveChar)
+        // ----> hardcoded - not good
+        if (character_SOThomas.isActive)
         {
             activeCharacter = thomas;
         }
-        else if (chrisIsActiveChar)
+        else if (character_SOChris.isActive)
         {
             activeCharacter = chris;
         }
@@ -106,14 +109,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void UpdateGameManager_SO()
+    private void Update_GameManager_SO()
     {
         gameManager_SO.activeCharPosition = activeCharacter.transform.position;
     }
 
-    private void CheckWinCondition()
+    private void Check_WinCondition()
     {
-        if (gameManager_SO.isThomasInGoal && gameManager_SO.isChrisInGoal && gameManager_SO.isClairInGoal)
+        // ----> hardcoded - not good
+        if (character_SOThomas.isInGoal && character_SOChris.isInGoal && character_SOClair.isInGoal)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

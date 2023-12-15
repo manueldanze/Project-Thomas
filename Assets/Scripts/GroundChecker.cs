@@ -6,10 +6,10 @@ public class GroundChecker : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GetComponentInParent<PlayerController>().SetIsGrounded(true);
+        GetComponentInParent<CharacterController>().Set_IsGrounded(true);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        GetComponentInParent<PlayerController>().SetIsGrounded(false);
+        GetComponentInParent<CharacterController>().Set_IsGrounded(false);
     }
 }
