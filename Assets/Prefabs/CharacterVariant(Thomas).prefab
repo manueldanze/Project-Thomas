@@ -74,11 +74,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8515711095479631397, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: m_Name
-      value: Thomas Variant
+      value: CharacterVariant(Thomas)
       objectReference: {fileID: 0}
     - target: {fileID: 8515711095479631397, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
       propertyPath: m_TagString
       value: Thomas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195785522321334582, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6444801
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195785522321334582, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.20424949
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195785522321334582, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8488291
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195785522321334582, guid: 7b2b9269ebcd7084482f01b17516ec43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.407
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

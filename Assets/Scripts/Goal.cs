@@ -8,7 +8,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals(character_SO.NAMETAG))
+        if (collision.tag.Equals(character_SO.nameTag))
         {            
             character_SO.isInGoal = true;
         }
@@ -16,7 +16,7 @@ public class Goal : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag.Equals(character_SO.NAMETAG))
+        if (collision.tag.Equals(character_SO.nameTag))
         {           
             character_SO.isInGoal = false;
         }

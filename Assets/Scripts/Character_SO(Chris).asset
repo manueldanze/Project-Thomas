@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6eafa3a5b466d54da6e2f88c8fecedb, type: 3}
   m_Name: Character_SO(Chris)
   m_EditorClassIdentifier: 
+  gameObj: {fileID: 0}
+  isImmuneToHazards: 0
+  isInGoal: 0
   position: {x: 0, y: 0, z: 0}
+  mass: 1
   maxVelocityX: 15
   maxVelocityY: 15
   moveSpeed: 800
-  jumpMagnitude: 800
-  color: {r: 0.8207547, g: 0.657315, b: 0.113563456, a: 1}
-  scale: {x: 1, y: 1, z: 1}
-  mass: 1.5
-  NAMETAG: Chris
-  isInGoal: 0
+  jumpMagnitude: 300

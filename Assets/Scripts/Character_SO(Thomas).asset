@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6eafa3a5b466d54da6e2f88c8fecedb, type: 3}
   m_Name: Character_SO(Thomas)
   m_EditorClassIdentifier: 
+  gameObj: {fileID: 0}
+  isImmuneToHazards: 0
   isInGoal: 0
-  isActive: 1
   position: {x: 0, y: 0, z: 0}
   mass: 1
   maxVelocityX: 15

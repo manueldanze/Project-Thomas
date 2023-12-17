@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GroundChecker : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         GetComponentInParent<CharacterController>().Set_IsGrounded(true);
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    
+    private void OnCollisionExit2D(Collision2D collision)
     {
         GetComponentInParent<CharacterController>().Set_IsGrounded(false);
     }

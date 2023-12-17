@@ -7,7 +7,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameManager_SO gameManager_SO;
 
-
     [Range(0f, 5f)]
     [SerializeField] private float camFollowSpeed;
 

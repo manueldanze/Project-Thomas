@@ -6,24 +6,35 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
+//// Params
+
     [SerializeField] private InputAction switchCharacter;
+    [SerializeField] private GameManager_SO gameManager_SO;
 
     private GameObject activeCharacter;
 
-    // ----> hardcoded - not good
-    [SerializeField] private GameObject thomas;
-    [SerializeField] private GameObject chris;
-    [SerializeField] private GameObject clair;
+    private GameObject thomas;
+    private GameObject chris;
+    private GameObject clair;
 
-    [SerializeField] private GameManager_SO gameManager_SO;
-
-    // ----> hardcoded - not good
     [SerializeField] private Character_SO character_SOThomas;
     [SerializeField] private Character_SO character_SOChris;
     [SerializeField] private Character_SO character_SOClair;
 
+
+//// Monobehavior
+
     private void Awake()
-    {              
+    {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 60;
+
+        thomas = character_SOThomas.gameObj;
+        chris = character_SOChris.gameObj;
+        clair = character_SOClair.gameObj;  
+
+        // default start conditions
         chris.gameObject.GetComponent<CharacterController>().enabled = false;
         clair.gameObject.GetComponent<CharacterController>().enabled = false;
         character_SOThomas.isActive = true;
@@ -39,8 +50,6 @@ public class GameManager : MonoBehaviour
         Check_WinCondition();
     }
 
-
-
     private void OnEnable()
     {
         switchCharacter.Enable();
@@ -51,6 +60,9 @@ public class GameManager : MonoBehaviour
         switchCharacter.Disable();
     }
 
+
+//// Custom Functions
+
     private void Update_ActiveCharacter()
     {
         if (switchCharacter.triggered)
@@ -60,7 +72,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ----> hardcoded - not good
     private void Switch_Character()
     {
         if (character_SOThomas.isActive)
@@ -94,7 +105,6 @@ public class GameManager : MonoBehaviour
 
     private void Set_ActiveCharacter()
     {
-        // ----> hardcoded - not good
         if (character_SOThomas.isActive)
         {
             activeCharacter = thomas;
@@ -116,7 +126,6 @@ public class GameManager : MonoBehaviour
 
     private void Check_WinCondition()
     {
-        // ----> hardcoded - not good
         if (character_SOThomas.isInGoal && character_SOChris.isInGoal && character_SOClair.isInGoal)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
