@@ -419,6 +419,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterVariant(Chris)
       objectReference: {fileID: 0}
+    - target: {fileID: 6702907694087195130, guid: e5eb37b867d6ed340bf7ee63291506f1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702907694087195130, guid: e5eb37b867d6ed340bf7ee63291506f1, type: 3}
+      propertyPath: m_TagString
+      value: Character
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5671,9 +5679,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   gameManager_SO: {fileID: 11400000, guid: d66b46ceb0286e849ac2abb33ba71e83, type: 2}
-  character_SOThomas: {fileID: 11400000, guid: f5b256dd9532cd147873d06b14b5ec61, type: 2}
-  character_SOChris: {fileID: 11400000, guid: b4783394160c0604db703127e398a4a2, type: 2}
-  character_SOClair: {fileID: 11400000, guid: 8f024e647bfee184f8acb88f0bc935dc, type: 2}
 --- !u!4 &785957270
 Transform:
   m_ObjectHideFlags: 0
@@ -5880,6 +5885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterVariant(Thomas)
       objectReference: {fileID: 0}
+    - target: {fileID: 2922804183348269101, guid: 15b21c5a6324f2f4cb55a57fb1949bac, type: 3}
+      propertyPath: m_TagString
+      value: Character
+      objectReference: {fileID: 0}
     - target: {fileID: 8738285392466784666, guid: 15b21c5a6324f2f4cb55a57fb1949bac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.16
@@ -5998,6 +6007,10 @@ PrefabInstance:
     - target: {fileID: 4400185431077355266, guid: 4530f113975b351419ffee54adce8e19, type: 3}
       propertyPath: m_Name
       value: CharacterVariant(Clair)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400185431077355266, guid: 4530f113975b351419ffee54adce8e19, type: 3}
+      propertyPath: m_TagString
+      value: Character
       objectReference: {fileID: 0}
     - target: {fileID: 7844105038736563893, guid: 4530f113975b351419ffee54adce8e19, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6135,9 +6148,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 696057757}
   - {fileID: 967365900}
   - {fileID: 1663151800}
-  - {fileID: 696057757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1789357665 stripped

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -34,6 +35,8 @@ public class CharacterController : MonoBehaviour
     private Vector2 rbVelocity;
     private float rbVelocityMagnitude;
 
+    private string nameTag;
+
     // gets value from child "GroundChecker"
     private bool isGrounded = false;
 
@@ -46,6 +49,7 @@ public class CharacterController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spawnPos = rb.transform.position;
         character_SO.gameObj = gameObject;
+        nameTag = character_SO.nameTag;
     }
 
     private void Update()
@@ -85,7 +89,6 @@ public class CharacterController : MonoBehaviour
         maxVelocityY = character_SO.maxVelocityY;
         moveSpeed = character_SO.moveSpeed;
         jumpMagnitude = character_SO.jumpMagnitude;
-        character_SO.nameTag = gameObject.tag;
         isImmuneToHazards = character_SO.isImmuneToHazards;
     }
 
@@ -137,5 +140,10 @@ public class CharacterController : MonoBehaviour
     public Vector3 Get_SpawnPos()
     {
         return spawnPos;
+    }
+
+    public string Get_NameTag()
+    {
+        return nameTag;
     }
 }

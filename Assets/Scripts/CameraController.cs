@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private GameManager_SO gameManager_SO;
+    private GameManager gameManager;
 
     [Range(0f, 5f)]
     [SerializeField] private float camFollowSpeed;
@@ -13,9 +13,14 @@ public class CameraController : MonoBehaviour
     [Range(-10f, -100f)]
     [SerializeField] private float camDistance;
 
+    private void Start()
+    {
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+    }
+
     private void FixedUpdate()
     {
-        FollowPlayerWithCamera(gameManager_SO.activeCharPosition);            
+        FollowPlayerWithCamera(gameManager.Get_activeCharacter().transform.position);           
     }
 
     private void FollowPlayerWithCamera(Vector3 playerPosition)

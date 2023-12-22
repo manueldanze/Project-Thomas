@@ -5,16 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Character_SO", menuName = "ScriptableObjects/Character_SO", order = 1)]
 public class Character_SO : ScriptableObject
 {
-    // not visible 
-    internal string nameTag; // for winning condition check
-    internal bool isActive;
-    internal GameObject gameObj; 
+    internal GameObject gameObj;
+
+    public string nameTag;
 
     public bool isImmuneToHazards;
 
     public bool isInGoal;
-
-    public Vector3 position;
     
     public float mass;
     public float maxVelocityX;
