@@ -9,6 +9,7 @@ TagManager:
   - Clair
   - GameManager
   - Character
+  - InputPackage
   layers:
   - Default
   - TransparentFX

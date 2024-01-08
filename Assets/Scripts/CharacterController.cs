@@ -10,11 +10,8 @@ using UnityEngine.InputSystem;
 public class CharacterController : MonoBehaviour
 {
 
-//// Params
-
-    // new input system
-    [SerializeField] private InputAction jump;
-    [SerializeField] private InputAction move;
+    //// Params
+    private PlayerInput input;
 
     [SerializeField] Character_SO character_SO;
 
@@ -45,7 +42,8 @@ public class CharacterController : MonoBehaviour
 //// Monobehavior
 
     private void Awake()
-    {    
+    {
+        input = GameObject.FindWithTag("InputPackage").GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         spawnPos = rb.transform.position;
         character_SO.gameObj = gameObject;
@@ -65,19 +63,6 @@ public class CharacterController : MonoBehaviour
         Clamp_Velocity(rb);
     }
 
-    // new input system
-    private void OnEnable()
-    {
-        jump.Enable();
-        move.Enable();
-    }
-
-    private void OnDisable()
-    {
-        jump.Disable();
-        move.Disable();
-    }
-
 
 //// Custom Functions
 
@@ -94,15 +79,15 @@ public class CharacterController : MonoBehaviour
 
     private void Read_Input()
     {
-        moveForce = move.ReadValue<Vector2>();
-        jumpForce = jump.ReadValue<Vector2>();
+        moveForce = input.actions["move"].ReadValue<Vector2>();
+        jumpForce = input.actions["jump"].ReadValue<Vector2>();
         rbVelocity = rb.velocity;
         rbVelocityMagnitude = rb.velocity.magnitude;
     }
 
     private void Execute_Jump(Rigidbody2D rb)
     {
-        if (isGrounded && jump.IsPressed())
+        if (isGrounded && input.actions["jump"].IsPressed())
         {
             rb.AddForce(jumpMagnitude * jumpForce * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }

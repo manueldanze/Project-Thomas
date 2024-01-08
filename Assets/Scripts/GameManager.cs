@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-//// Params
+    //// Params
 
-    [SerializeField] private InputAction switchCharacter;
+    private PlayerInput input;
 
     private GameObject activeCharacter;
 
@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        input = GameObject.FindWithTag("InputPackage").GetComponent<PlayerInput>();
         CreateCharacterList();
-
         Set_ActiveCharacter(0);
     }
 
@@ -34,15 +34,6 @@ public class GameManager : MonoBehaviour
         //Check_WinCondition();
     }
 
-    private void OnEnable()
-    {
-        switchCharacter.Enable();
-    }
-
-    private void OnDisable()
-    {
-        switchCharacter.Disable();
-    }
 
 
 //// Custom Functions
@@ -72,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         if (characterList.Count > 0)
         {     
-            if (switchCharacter.WasPressedThisFrame())
+            if (input.actions["Switch Character"].WasPressedThisFrame())
             {
                 if (activeIndex == characterList.Count - 1)
                 {

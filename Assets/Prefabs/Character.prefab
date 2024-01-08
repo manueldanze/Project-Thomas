@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79480035d0fa9a847be44bab1aedeba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 0}
   jump:
     m_Name: Jump
     m_Type: 1
