@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 public class CharacterController : MonoBehaviour
 {
 
-    //// Params
+//// Params
     private PlayerInput input;
 
     [SerializeField] Character_SO character_SO;
@@ -25,6 +25,7 @@ public class CharacterController : MonoBehaviour
     private float maxVelocityY;
     private float moveSpeed;
     private float jumpMagnitude;
+    private bool isInGoal;
 
     // input buffer
     private Vector2 moveForce;
@@ -66,7 +67,6 @@ public class CharacterController : MonoBehaviour
 
 //// Custom Functions
 
-    // put into Update() to update dynamic on runtime
     private void Update_SOVariables()
     {
         rb.mass = character_SO.mass;
@@ -75,6 +75,7 @@ public class CharacterController : MonoBehaviour
         moveSpeed = character_SO.moveSpeed;
         jumpMagnitude = character_SO.jumpMagnitude;
         isImmuneToHazards = character_SO.isImmuneToHazards;
+        isInGoal = character_SO.isInGoal;
     }
 
     private void Read_Input()
@@ -130,5 +131,10 @@ public class CharacterController : MonoBehaviour
     public string Get_NameTag()
     {
         return nameTag;
+    }
+
+    public bool Get_IsInGoal()
+    {
+        return isInGoal;
     }
 }

@@ -15,7 +15,6 @@ MonoBehaviour:
   nameTag: Clair
   isImmuneToHazards: 1
   isInGoal: 0
-  position: {x: 0, y: 0, z: 0}
   mass: 4
   maxVelocityX: 15
   maxVelocityY: 15

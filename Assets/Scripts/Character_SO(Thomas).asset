@@ -15,7 +15,6 @@ MonoBehaviour:
   nameTag: Thomas
   isImmuneToHazards: 0
   isInGoal: 0
-  position: {x: 0, y: 0, z: 0}
   mass: 1
   maxVelocityX: 15
   maxVelocityY: 15

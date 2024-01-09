@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    //// Params
+//// Params
 
     private PlayerInput input;
 
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private int activeIndex = 0;
 
-    //// Monobehavior
+//// Monobehavior
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         Update_ActiveCharacter();
 
-        //Check_WinCondition();
+        Check_WinCondition();
     }
 
 
@@ -90,11 +90,25 @@ public class GameManager : MonoBehaviour
         return activeCharacter;
     }
 
-    //private void Check_WinCondition()
-    //{
-    //    if (character_SOThomas.isInGoal && character_SOChris.isInGoal && character_SOClair.isInGoal)
-    //    {
-    //        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    //    }
-    //}
+    private void Check_WinCondition()
+    {
+        bool allInGoal = false;
+
+        foreach (GameObject character in characterList)
+        {
+            if (character.GetComponent<CharacterController>().Get_IsInGoal())
+            {
+                allInGoal = true;
+            }
+            else
+            {
+                allInGoal = false;
+            }         
+        }
+
+        if (allInGoal)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 }
