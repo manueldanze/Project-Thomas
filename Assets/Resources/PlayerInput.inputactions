@@ -35,7 +35,7 @@
             ],
             "bindings": [
                 {
-                    "name": "Key",
+                    "name": "Keyboard",
                     "id": "0277eec0-7797-4632-9868-bb4073057baf",
                     "path": "2DVector",
                     "interactions": "",
@@ -44,28 +44,6 @@
                     "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "c06a5b3c-a190-426a-90c1-ae4cbd5841a5",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "d45c7899-49cd-4cba-b56d-8ab80cbd205f",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -91,7 +69,7 @@
                 },
                 {
                     "name": "Touch",
-                    "id": "88cf3596-bbcb-4256-aea7-15678f9c23eb",
+                    "id": "7c4749cf-604e-4e4d-b086-205af764d62c",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -101,31 +79,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "da2de87a-ec48-4ce5-a9dd-e8221cd366c4",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "4102711a-b889-4bcb-8be3-c8684d38029b",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "left",
-                    "id": "3ae757e0-41d1-42f5-abd4-d140c069f00d",
-                    "path": "<Touchscreen>/primaryTouch/delta/left",
+                    "id": "b87699c2-62fd-4421-bd2c-f4feee3fa208",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -135,8 +91,8 @@
                 },
                 {
                     "name": "right",
-                    "id": "426bef54-c4b6-48e9-9346-b1a002b500ea",
-                    "path": "<Touchscreen>/primaryTouch/delta/right",
+                    "id": "7fcb389b-f695-418a-9233-cf3a23be0874",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -145,7 +101,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Key",
+                    "name": "Keyboard & Touch",
                     "id": "3090e848-1467-4db7-9661-72c60722eb78",
                     "path": "2DVector",
                     "interactions": "",
@@ -159,94 +115,6 @@
                     "name": "up",
                     "id": "caf1c56c-f1df-4fb0-9bac-05d251cc15ed",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "00f21fa2-8305-4eed-9a37-ae13c5c380e1",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "20f10f8a-4066-494f-a79d-f04c2666e4e5",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "285568d2-2e42-4065-8e3c-ebb68fab0d86",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Touch",
-                    "id": "fa30bbb4-f6ab-465f-88de-ac85b822858e",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "8a020978-148c-44f6-b9dd-b257cfbbb003",
-                    "path": "<Touchscreen>/Press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "8c314e26-4b43-4893-8474-cb7d7090f60c",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "7f7df22c-7be0-4758-b9f3-dac4e9a1bcaf",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "6f18e95b-a20c-48cc-b528-5ef5a704aaa0",
-                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

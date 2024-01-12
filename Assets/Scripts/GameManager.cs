@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private int activeIndex = 0;
 
-//// Monobehavior
+    //// Monobehavior
 
     private void Awake()
     {

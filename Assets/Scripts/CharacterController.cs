@@ -13,7 +13,7 @@ public class CharacterController : MonoBehaviour
 //// Params
     private PlayerInput input;
 
-    [SerializeField] Character_SO character_SO;
+    [SerializeField] private Character_SO character_SO;
 
     // set initial spawn pos for possible reset of char when died
     private Vector3 spawnPos;
@@ -51,6 +51,7 @@ public class CharacterController : MonoBehaviour
         nameTag = character_SO.nameTag;
     }
 
+
     private void Update()
     {
         Update_SOVariables();
@@ -82,6 +83,7 @@ public class CharacterController : MonoBehaviour
     {
         moveForce = input.actions["move"].ReadValue<Vector2>();
         jumpForce = input.actions["jump"].ReadValue<Vector2>();
+            
         rbVelocity = rb.velocity;
         rbVelocityMagnitude = rb.velocity.magnitude;
     }
@@ -96,7 +98,7 @@ public class CharacterController : MonoBehaviour
 
     private void Execute_Move(Rigidbody2D rb)
     {
-        rb.AddForce(moveSpeed * moveForce * Time.fixedDeltaTime, ForceMode2D.Force);
+        rb.AddForce(moveSpeed * moveForce * Time.fixedDeltaTime, ForceMode2D.Force); 
     }
 
     private void Clamp_Velocity(Rigidbody2D rb)
