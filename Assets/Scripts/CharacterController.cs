@@ -79,7 +79,7 @@ public class CharacterController : MonoBehaviour
         isInGoal = character_SO.isInGoal;
     }
 
-    private void Read_Input()
+        private void Read_Input()
     {
         moveForce = input.actions["move"].ReadValue<Vector2>();
         jumpForce = input.actions["jump"].ReadValue<Vector2>();

@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class GroundChecker : MonoBehaviour
 {
+    private CharacterController cC;
+
+    private void Start()
+    {
+        cC = GetComponentInParent<CharacterController>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GetComponentInParent<CharacterController>().Set_IsGrounded(true);
+        cC.Set_IsGrounded(true);
     }
     
     private void OnCollisionExit2D(Collision2D collision)
     {
-        GetComponentInParent<CharacterController>().Set_IsGrounded(false);
+        if (cC == null) 
+        {
+            print("is null");
+        }
+
+        cC.Set_IsGrounded(false);
     }
 }

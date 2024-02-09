@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -34,10 +35,7 @@ public class GameManager : MonoBehaviour
         Check_WinCondition();
     }
 
-
-
-//// Custom Functions
-
+    //// Custom Functions
     private void CreateCharacterList()
     {
         GameObject[] characterArr = GameObject.FindGameObjectsWithTag("Character");
@@ -92,23 +90,30 @@ public class GameManager : MonoBehaviour
 
     private void Check_WinCondition()
     {
-        bool allInGoal = false;
 
-        foreach (GameObject character in characterList)
-        {
-            if (character.GetComponent<CharacterController>().Get_IsInGoal())
-            {
-                allInGoal = true;
-            }
-            else
-            {
-                allInGoal = false;
-            }         
-        }
-
-        if (allInGoal)
+        if (characterList[0].GetComponent<CharacterController>().Get_IsInGoal() &&
+            characterList[1].GetComponent<CharacterController>().Get_IsInGoal() &&
+            characterList[2].GetComponent<CharacterController>().Get_IsInGoal())
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
+
+        //bool allInGoal = false;
+        //foreach (GameObject character in characterList)
+        //{
+        //    if (character.GetComponent<CharacterController>().Get_IsInGoal())
+        //    {
+        //        allInGoal = true;
+        //    }
+        //    else
+        //    {
+        //        allInGoal = false;
+        //    }         
+        //}
+        //if (allInGoal)
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //}
     }
 }
