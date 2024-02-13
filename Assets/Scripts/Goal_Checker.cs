@@ -10,10 +10,8 @@ public class Goal_Checker : MonoBehaviour
     {
         if (collision.tag.Equals(character_SO.nameTag))
         {
-            //collision.GetComponent<CharacterController>().enabled = true;
-            print(character_SO.nameTag + " entered");
+            Debug.Log(character_SO.nameTag + " entered goal");
             character_SO.isInGoal = true;
-            //collision.GetComponent<CharacterController>().enabled = false;
         }
     }
     
@@ -21,10 +19,8 @@ public class Goal_Checker : MonoBehaviour
     {
         if (collision.tag.Equals(character_SO.nameTag))
         {
-            //collision.GetComponent<CharacterController>().enabled = true;
-            print(character_SO.nameTag + " exited");
+            Debug.Log(character_SO.nameTag + " exited goal");
             character_SO.isInGoal = false;
-            //collision.GetComponent<CharacterController>().enabled = false;
         }
     }
 }

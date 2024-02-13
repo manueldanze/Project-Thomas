@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     private void Check_WinCondition()
     {
+        // hardcoded in lack of time, hard to write dynamic flexible code because of loose coupling of GameManager 
 
         if (characterList[0].GetComponent<CharacterController>().Get_IsInGoal() &&
             characterList[1].GetComponent<CharacterController>().Get_IsInGoal() &&
@@ -97,23 +98,5 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-
-
-        //bool allInGoal = false;
-        //foreach (GameObject character in characterList)
-        //{
-        //    if (character.GetComponent<CharacterController>().Get_IsInGoal())
-        //    {
-        //        allInGoal = true;
-        //    }
-        //    else
-        //    {
-        //        allInGoal = false;
-        //    }         
-        //}
-        //if (allInGoal)
-        //{
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //}
     }
 }
